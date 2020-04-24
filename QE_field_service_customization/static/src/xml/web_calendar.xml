@@ -1,0 +1,16 @@
+<template>
+	<t t-extend="calendar-box">
+		<t t-jquery="div.o_event_title" t-operation="replace">
+			<div class="o_event_title">
+				<t t-if="record.is_fsm">
+					<t t-esc="record.partner_id[1]"/>
+					<div t-esc="record.partner_city"/>
+					<div t-esc="record.display_name"/>
+				</t>
+				<t t-else="">
+					<t t-esc="record.display_name"/>
+				</t>
+			</div>
+		</t>
+	</t>
+</template>

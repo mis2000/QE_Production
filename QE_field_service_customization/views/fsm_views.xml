@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="project_task_view_kanban" model="ir.ui.view">
+        <field name="name">project.task.kanban.fsm.nonprimary</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="industry_fsm.project_task_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_kanban_record_headings')]/t[1]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <div>
+                    <field name="partner_id"/>
+                    <t t-if="record.is_fsm.raw_value and record.partner_city.value"> • <field name="partner_city" /></t>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_task_view_calendar_fsm" model="ir.ui.view">
+        <field name="name">project.task.calendar.fsm</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="industry_fsm.project_task_view_calendar_fsm"/>
+        <field name="arch" type="xml">
+            <xpath expr="//calendar/field[@name='partner_phone']" position="after">
+                <field name="is_fsm"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
