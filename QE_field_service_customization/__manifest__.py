@@ -11,7 +11,7 @@
     'category': 'Operations/Field Service',
     'version': '13.0.1.0.0',
     'author': "Isarel Gross",
-    'depends': ['industry_fsm'],
+    'depends': ['industry_fsm', 'project', 'project_enterprise'],
     'data': [
         'views/fsm_views.xml'
     ],
