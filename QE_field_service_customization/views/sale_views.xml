@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <xpath expr="//group[@name='sale_shipping']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="payment_term_id" position="before">
+                <field name="commitment_date"/>
+                <field name="user_id" string="Salesperson / Assigned to"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
