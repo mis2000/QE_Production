@@ -15,7 +15,7 @@ class SaleOrderLine(models.Model):
                         self.order_id.commitment_date if self.order_id.commitment_date else fields.Datetime.now())
         taskValues.update({
             'planned_date_begin': commitmentDate,
-            'planned_date_end': commitmentDate + timedelta(minutes = 30),
+            'planned_date_end': commitmentDate + timedelta(minutes = 15),
             'user_id': self.order_id.user_id and self.order_id.user_id.id or False,
             })
         return taskValues
