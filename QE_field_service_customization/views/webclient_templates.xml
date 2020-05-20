@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="QE field service" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/QE_field_service_customization/static/src/js/calendar.js"></script>
+            <link rel="stylesheet" type="text/scss" href="/QE_field_service_customization/static/src/scss/web_calendar.scss"/>
+        </xpath>
+    </template>
+
+</odoo>
